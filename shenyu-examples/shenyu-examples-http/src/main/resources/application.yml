@@ -38,6 +38,14 @@ spring:
     multipart:
       max-file-size: 100MB
       max-request-size: 100MB
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://auth.com:9000
+          jwk-set-uri: http://auth.com:9000/oauth2/jwks
+  main:
+    allow-bean-definition-overriding: true
 
 logging:
   level:

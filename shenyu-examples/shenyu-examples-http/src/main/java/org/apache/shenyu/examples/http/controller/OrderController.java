@@ -67,6 +67,7 @@ public class OrderController {
     @GetMapping("/findById")
     @ShenyuSpringMvcClient("/findById")
     @ApiDoc(desc = "findById")
+//    @PreAuthorize("hasAuthority('read')")
     public OrderDTO findById(@RequestParam("id") final String id) {
         return build(id, "hello world findById");
     }
@@ -100,6 +101,7 @@ public class OrderController {
 
     /**
      * Test oauth2 request.
+     *
      * @param request request with the oauth2 headers
      * @return the oauth2 dto
      */
